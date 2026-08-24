@@ -35,4 +35,18 @@ Si le jeu reste en anglais, ajoutez l'argument suivant dans les arguments de lan
 
 -culture=fr
 
+Pour les autres launcher :
+
+   Lutris : Configurer > Options du jeu > Arguments
+   Heroic : Parametres du jeu > Arguments avances
+   Steam  : Proprietes > Options de lancement > %command% -culture=fr
+
+Attention : respectez exactement cette écriture, sans espace.
+
+DESINSTALLATION
+
+Pour supprimer le patch, ouvrez un terminal dans le dossier du patch et exécutez :
+
+bash desinstaller-fr.sh
+
 
