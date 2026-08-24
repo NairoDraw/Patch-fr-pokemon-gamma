@@ -1,6 +1,6 @@
 Pokemon Gamma emeraude-Patch Fr 
 
-disponnible maintenant
+disponible maintenant
 
 https://github.com/user-attachments/assets/54bc4629-5bf2-4b65-91c3-a32e52b05624
 
