@@ -1,4 +1,4 @@
-Pokemon Gamma emeraude-Patch Fr 
+Pokemon Gamma emeraude-Patch Fr Version 1.13
 
 disponible maintenant
 
