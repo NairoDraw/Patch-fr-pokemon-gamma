@@ -1,0 +1,111 @@
+================================================================================
+   TRADUCTION FRANCAISE  --  INSTALLATION SOUS LINUX
+   Bazzite, SteamOS, Fedora, Arch...
+   Faugus Launcher, Lutris, Heroic, Bottles ou Steam/Proton.
+================================================================================
+
+
+INSTALLATION
+------------
+
+Ouvre un terminal dans ce dossier LINUX, puis :
+
+      bash installer-fr.sh
+
+Le script fait tout : il trouve le jeu, installe la traduction, configure le
+francais et verifie son propre travail.
+
+Si le jeu n'est pas trouve, donne-lui le chemin :
+
+      bash installer-fr.sh /home/toi/Games/gamma-emerald-ea-windows
+
+C'est le dossier qui contient PokemonEmerald.exe (le petit, ~400 Ko, a la
+racine -- pas celui dans Binaries/Win64).
+
+Astuce Faugus : clic droit sur le jeu > Edit. Le champ du haut donne le chemin.
+
+Ensuite : lance le jeu normalement depuis Faugus. C'est tout.
+
+
+POURQUOI AUCUN ARGUMENT N'EST NECESSAIRE
+----------------------------------------
+
+Le script depose un fichier de configuration :
+
+   PokemonEmerald/Saved/Config/Windows/Engine.ini
+
+      [Internationalization]
+      Culture=fr
+      Language=fr
+
+Unreal lit cette valeur au demarrage, quel que soit le lanceur.
+Methode testee et validee sous Bazzite avec Faugus.
+
+
+SI LE JEU RESTE EN ANGLAIS
+--------------------------
+
+Ajoute l'argument  -culture=fr  :
+
+   Faugus : clic droit sur le jeu > Edit > champ des arguments
+   Lutris : Configurer > Options du jeu > Arguments
+   Heroic : Parametres du jeu > Arguments avances
+   Steam  : Proprietes > Options de lancement > %command% -culture=fr
+
+Le script depose aussi deux lanceurs dans le dossier du jeu, qui detectent
+umu-run, proton ou wine :  jouer-en-francais.sh  et  jouer-en-anglais.sh
+
+
+DESINSTALLER
+------------
+
+      bash desinstaller-fr.sh
+
+Retire la traduction, restaure l'Engine.ini d'origine (le script en avait garde
+une copie) et supprime les lanceurs.
+
+
+SI L'ARCHIVE A ETE MAL EXTRAITE
+-------------------------------
+
+Symptome : un seul fichier nomme
+
+   PokemonEmerald\Content\Localization\Game\fr\Game.locres
+
+avec des ANTISLASHS dans le nom, au lieu d'une arborescence de dossiers.
+Un  ls  ne trouve rien alors qu'un  find  trouve le fichier.
+
+Le script detecte et corrige ce cas tout seul. Lance-le simplement.
+
+
+VERIFIER QUE LA TRADUCTION EST CHARGEE
+--------------------------------------
+
+   grep -i locres ~/Games/gamma-emerald-ea-windows/PokemonEmerald/Saved/Logs/PokemonEmerald.log
+
+Cherche :
+
+   LocRes '.../Game/fr/Game.locres' failed the magic number check!
+
+Ce message a l'air d'une erreur : c'est le BON signe. Il prouve que le jeu a
+trouve et charge le fichier.
+
+Si la ligne n'apparait pas, verifie la CASSE du chemin : dossier "fr" en
+minuscules, "Game.locres" avec un G majuscule. Linux distingue les majuscules.
+
+Si le log est introuvable, Proton l'a peut-etre ecrit dans le prefixe :
+
+   find ~ -name "PokemonEmerald.log" -newermt "-1 hour" 2>/dev/null
+
+
+AUCUN FICHIER DU JEU N'EST MODIFIE
+----------------------------------
+
+La traduction est un fichier ajoute. Engine.ini est un fichier de configuration
+que le jeu genere lui-meme, et le script en garde une copie avant d'y toucher.
+
+
+================================================================================
+   Le detail de ce qui est traduit et de ce qui ne l'est pas se trouve dans
+   LISEZ-MOI - COMMENCER ICI.txt, a la racine.
+================================================================================

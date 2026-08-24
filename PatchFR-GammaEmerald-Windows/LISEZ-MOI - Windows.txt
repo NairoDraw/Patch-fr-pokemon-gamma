@@ -1,0 +1,86 @@
+================================================================================
+   TRADUCTION FRANCAISE  --  INSTALLATION SOUS WINDOWS
+================================================================================
+
+
+INSTALLATION  --  30 secondes
+-----------------------------
+
+1. Ouvre le dossier de ton jeu, celui qui contient PokemonEmerald.exe
+   (le petit, environ 400 Ko, a la RACINE -- pas celui dans Binaries\Win64).
+
+2. Copie DEDANS les elements de ce dossier WINDOWS :
+
+      JOUER EN FRANCAIS.bat
+      JOUER EN ANGLAIS.bat
+      LISEZ-MOI - Windows.txt
+      PokemonEmerald\            <-- ce dossier
+
+   Windows demandera de fusionner avec le dossier PokemonEmerald existant :
+   reponds OUI. Il n'ecrase rien, il ajoute un fichier dans un sous-dossier.
+
+3. Lance le jeu avec "JOUER EN FRANCAIS.bat".
+
+
+LANCE TOUJOURS LE JEU AVEC CE RACCOURCI
+---------------------------------------
+
+C'est le seul moyen fiable, et voici pourquoi.
+
+Le jeu choisit sa langue au demarrage. On peut la lui indiquer de deux
+facons : par un fichier de configuration, ou par un argument de lancement.
+
+Le fichier de configuration NE TIENT PAS. Le jeu reecrit sa configuration
+en quittant et EFFACE le reglage de langue. Ca marche une fois, puis le jeu
+repasse en anglais au lancement suivant. Teste et verifie sur la version
+1.13.1.
+
+L'argument de lancement, lui, marche a tous les coups. C'est exactement ce
+que fait "JOUER EN FRANCAIS.bat" :
+
+      PokemonEmerald.exe -culture=fr
+
+Si tu veux, epingle ce raccourci a ta barre des taches. Tu lances le jeu
+comme d'habitude, et il est en francais.
+
+
+SI LE JEU S'AFFICHE EN ANGLAIS
+------------------------------
+
+  - Tu l'as lance en double-cliquant sur PokemonEmerald.exe au lieu du
+    raccourci ? C'est la cause numero un. Passe par
+    "JOUER EN FRANCAIS.bat".
+
+  - Tu as mis le jeu a jour ? Le dossier du jeu change de nom a chaque
+    version (v2, v3...). La traduction ne suit PAS toute seule : recopie
+    le dossier PokemonEmerald\ ET les deux .bat dans le NOUVEAU dossier.
+
+
+REVENIR A L'ANGLAIS
+-------------------
+
+  Ponctuellement : lance "JOUER EN ANGLAIS.bat".
+  Definitivement : supprime le fichier Game.locres que tu as copie, dans
+                   PokemonEmerald\Content\Localization\Game\fr\
+                   Le jeu redevient exactement celui d'origine.
+
+
+CE QUI EST TRADUIT
+------------------
+
+Dialogues, menus, sac, objets, CT, descriptions du Pokedex, ecran de resume,
+Centre Pokemon. Plus de 7 800 textes.
+
+Restent en anglais : les noms d'attaques, leurs descriptions, les noms
+d'especes, les talents et les natures. Ce n'est pas un oubli -- le jeu ne
+les fait pas passer par son systeme de traduction, aucun fichier ne peut
+les atteindre. Seul le developpeur peut y remedier, et il a ete prevenu.
+
+Quelques dialogues recents peuvent aussi rester en anglais : le jeu evolue
+vite, et chaque texte reecrit par son auteur doit etre rattache a nouveau.
+
+
+================================================================================
+   Traduction non officielle, faite par un joueur, offerte a la communaute.
+   Aucun fichier du jeu n'est modifie.
+================================================================================
