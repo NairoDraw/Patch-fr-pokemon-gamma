@@ -69,7 +69,7 @@ CE QUI EST TRADUIT
 ------------------
 
 Dialogues, menus, sac, objets, CT, descriptions du Pokedex, ecran de resume,
-Centre Pokemon. Plus de 7 800 textes.
+Centre Pokemon. Plus de 7 900 textes.
 
 Restent en anglais : les noms d'attaques, leurs descriptions, les noms
 d'especes, les talents et les natures. Ce n'est pas un oubli -- le jeu ne
